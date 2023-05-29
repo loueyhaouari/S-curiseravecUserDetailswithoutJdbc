@@ -4,4 +4,4 @@
 <img src="captures/chercherproduit.JPG">
 <img src="captures/modifierProduit.JPG">
 <img src="captures/DevTools1.png">
-<img src="captures/DevTools2.png">
+<img src="captures/Devtools2.png">

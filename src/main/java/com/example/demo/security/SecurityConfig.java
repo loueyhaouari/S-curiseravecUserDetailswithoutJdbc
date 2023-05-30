@@ -1,5 +1,7 @@
 package com.example.demo.security;
 
+import com.example.demo.security.service.UserDetailServiceImpl;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,10 +22,12 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 @Configuration
 @EnableMethodSecurity(prePostEnabled = true)
+@AllArgsConstructor
 //Pour éviter la suppression avec l'url protéger les méthodes
 public class SecurityConfig {
-    @Autowired
+
     private PasswordEncoder passwordEncoder;
+    private UserDetailServiceImpl userDetailServiceImpl;
     //Datasource de mon application c'est la base de donnéee qui est configuré dans application.properties
 //@Bean
     public JdbcUserDetailsManager jdbcUserDetailsManager(DataSource dataSource){
@@ -52,6 +56,7 @@ public class SecurityConfig {
 //    httpSecurity.authorizeHttpRequests().requestMatchers("/admin/**").hasRole("ADMIN");
         httpSecurity.authorizeHttpRequests().anyRequest().authenticated();
         httpSecurity.exceptionHandling().accessDeniedPage("/notAuthorized");
+        httpSecurity.userDetailsService(userDetailServiceImpl);
     return httpSecurity.build();
     }
 

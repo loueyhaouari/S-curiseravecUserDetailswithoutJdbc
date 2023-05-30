@@ -53,7 +53,7 @@ patientRepository.save(new Patient(null,"Hanane",new Date(),false,432));
 	}
 
 
-	@Bean
+	//@Bean
 	CommandLineRunner commandLineRunnerUserDetails(AccountService accountService){
 		return args -> {
 			accountService.addNewRole("USER");

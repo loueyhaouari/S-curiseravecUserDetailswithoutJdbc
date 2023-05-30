@@ -1,4 +1,10 @@
 <h3>Compte Rendu</h3>
+<h3>JdbcUserDetailManager</h3>
+<h1>Table authorities</h1>
+<img src="captures/authorities.JPG">
+<h1>Table users bcrypt</h1>
+<img src="captures/bcrypt.JPG">
+
 <img src="captures/cap.JPG">
 <img src="captures/AjouterProduit.JPG">
 <img src="captures/chercherproduit.JPG">

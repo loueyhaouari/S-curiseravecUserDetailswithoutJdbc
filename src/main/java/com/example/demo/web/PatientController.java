@@ -27,7 +27,7 @@ public class PatientController {
     @GetMapping("/admin/delete")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     //Pour éviter la suppression avec l'url protéger les méthodes
-    public String delete(Long id,String keyword, int page){
+    public String delete(Long id,@RequestParam(name = "keyword",defaultValue = "") String keyword,@RequestParam(name = "page",defaultValue = "0") int page){
 patientRepository.deleteById(id);
 //<!-- Il faut garder le mot clé pour rester sur la meme page -->
 
@@ -55,7 +55,7 @@ return "redirect:/user/index?page="+page+"&keyword="+keyword;
             return "formPatients";
         }
       patientRepository.save(patient);
-        return "redirect:/index?keyword="+patient.getNom();
+        return "redirect:/user/index?keyword="+patient.getNom();
     }
 @GetMapping("/user/index")
     public String index(Model model, @RequestParam(name = "page",defaultValue = "0") int p

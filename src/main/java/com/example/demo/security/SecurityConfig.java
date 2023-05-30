@@ -36,7 +36,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
     //Toutes les requetes nécéssite une authentification
 //   httpSecurity.formLogin();
-    httpSecurity.rememberMe();
+//    httpSecurity.rememberMe();
     httpSecurity.formLogin().loginPage("/login").permitAll();
     httpSecurity.authorizeHttpRequests().requestMatchers("/webjars/**").permitAll();
 //    httpSecurity.authorizeHttpRequests().requestMatchers("/user/**").hasRole("USER");

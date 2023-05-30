@@ -56,7 +56,20 @@ patientRepository.save(new Patient(null,"Hanane",new Date(),false,432));
 	PasswordEncoder passwordEncoder(){
 		return new BCryptPasswordEncoder();
 	}
+	//	@Bean
+CommandLineRunner commandLineRunner(JdbcUserDetailsManager jdbcUserDetailsManager){
+		PasswordEncoder passwordEncoder=passwordEncoder();
+		return args -> {
+		jdbcUserDetailsManager.createUser(User.withUsername("user1")
+				.password(passwordEncoder.encode("12345")).roles("USER").build());
+			jdbcUserDetailsManager.createUser(User.withUsername("user2")
+					.password(passwordEncoder.encode("12345")).roles("USER").build());
 
+			jdbcUserDetailsManager.createUser(User.withUsername("admin")
+					.password(passwordEncoder.encode("12345")).roles("USER","ADMIN").build());
+
+		};
+}
 
 }
 

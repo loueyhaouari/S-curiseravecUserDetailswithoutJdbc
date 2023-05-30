@@ -1,4 +1,10 @@
-<h3>Compte Rendu</h3>
+<h3>UserDetailsService</h3>
+<h3>Table role</h3>
+<img src="captures/app_role.JPG">
+<h3>Table user</h3>
+<img src="captures/appUser.JPG">
+<h3>Table role_user</h3>
+<img src="captures/app_role_user.JPG">
 <h3>JdbcUserDetailManager</h3>
 <h1>Table authorities</h1>
 <img src="captures/authorities.JPG">

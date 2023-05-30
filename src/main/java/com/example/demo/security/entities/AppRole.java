@@ -1,2 +1,19 @@
-package com.example.demo.security.entities;public class AppRole {
+package com.example.demo.security.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+
+public class AppRole {
+    @Id
+private String role;
 }

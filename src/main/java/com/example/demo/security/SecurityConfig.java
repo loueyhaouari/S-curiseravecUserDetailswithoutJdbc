@@ -25,7 +25,7 @@ public class SecurityConfig {
     @Autowired
     private PasswordEncoder passwordEncoder;
     //Datasource de mon application c'est la base de donnéee qui est configuré dans application.properties
-@Bean
+//@Bean
     public JdbcUserDetailsManager jdbcUserDetailsManager(DataSource dataSource){
     JdbcUserDetailsManager jdbcUserDetailsManager=new JdbcUserDetailsManager(dataSource);
     return jdbcUserDetailsManager;
